@@ -2,9 +2,6 @@
 FROM elixir:1.9.0-alpine as build
 
 ENV MIX_ENV=prod
-ENV POXA_APP_KEY=7da962ddd9d644ba48bb
-ENV POXA_SECRET=ddd5b92f165cf93e2cc8
-ENV POXA_APP_ID=951939
 
 ENV PORT=8081
 
@@ -40,4 +37,9 @@ RUN chown -R nobody: /app
 USER nobody
 
 ENV HOME=/app
+
+ENV POXA_APP_KEY=7da962ddd9d644ba48bb
+ENV POXA_SECRET=ddd5b92f165cf93e2cc8
+ENV POXA_APP_ID=951939
+
 CMD /app/bin/poxa start
